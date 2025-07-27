@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Image Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md py-6">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center text-gray-800">
+          Image Gallery
+        </h1>
+        <p class="text-center text-gray-600 mt-2">
+          Explore our collection of stunning images
+        </p>
+        <p class="text-center text-sm text-gray-500 italic mt-2">
+          "Where every pixel tells a story."
+        </p>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+      <!-- Filter controls -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button
+          class="filter-btn active px-4 py-2 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn px-4 py-2 rounded-full border border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition"
+          data-filter="nature"
+        >
+          Nature
+        </button>
+        <button
+          class="filter-btn px-4 py-2 rounded-full border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition"
+          data-filter="architecture"
+        >
+          Architecture
+        </button>
+        <button
+          class="filter-btn px-4 py-2 rounded-full border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white transition"
+          data-filter="travel"
+        >
+          Travel
+        </button>
+        <button
+          class="filter-btn px-4 py-2 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition"
+          data-filter="abstract"
+        >
+          Abstract
+        </button>
+      </div>
+
+      <!-- Gallery grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        id="gallery-grid"
+      >
+        <!-- Nature Images -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="nature"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/23d6a0cf-1700-4c0b-b634-7e41fd974606.png"
+            alt="Breathtaking mountain landscape with snow-capped peaks under golden sunrise"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Mountain Majesty</h3>
+            <p class="text-sm text-gray-600 mt-1">Nature</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="nature"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3c647060-8c8f-40af-b4d9-1603583585b6.png"
+            alt="Serene forest stream with crystal clear water flowing over smooth rocks"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Forest Stream</h3>
+            <p class="text-sm text-gray-600 mt-1">Nature</p>
+          </div>
+        </div>
+
+        <!-- Architecture Images -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="architecture"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3292d0ea-fb9e-48da-b862-9c2ceabec872.png"
+            alt="Modern glass skyscraper with geometric patterns reflecting blue sky"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Urban Reflection</h3>
+            <p class="text-sm text-gray-600 mt-1">Architecture</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="architecture"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f48a0329-f459-4e99-9559-d2682055f8e4.png"
+            alt="Ancient stone bridge spanning a river with medieval buildings in background"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Historic Bridge</h3>
+            <p class="text-sm text-gray-600 mt-1">Architecture</p>
+          </div>
+        </div>
+
+        <!-- Travel Images -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="travel"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d90d713-231b-4d6b-b4a1-c5030a8e108d.png"
+            alt="Busy street market in Southeast Asia with colorful displays and lanterns"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Street Market</h3>
+            <p class="text-sm text-gray-600 mt-1">Travel</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="travel"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/524b610e-4d69-4350-9759-c9d6aab4176c.png"
+            alt="Tropical beach with turquoise water and palm trees at golden hour"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Paradise Beach</h3>
+            <p class="text-sm text-gray-600 mt-1">Travel</p>
+          </div>
+        </div>
+
+        <!-- Abstract Images -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="abstract"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6bbae4e2-b53e-4989-add2-85ccb915600b.png"
+            alt="Colorful abstract painting with swirling patterns of red, blue, and yellow"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Color Swirl</h3>
+            <p class="text-sm text-gray-600 mt-1">Abstract</p>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="abstract"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/52717acc-9258-4959-a6ee-9c76069a35bc.png"
+            alt="Geometric optical illusion with black and white patterns creating depth"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Visual Paradox</h3>
+            <p class="text-sm text-gray-600 mt-1">Abstract</p>
+          </div>
+        </div>
+
+        <!-- More Nature -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="nature"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dcd19481-af82-4646-bfe2-4404bcd2a441.png"
+            alt="Close-up of vibrant autumn leaves with sunlight filtering through"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Autumn Colors</h3>
+            <p class="text-sm text-gray-600 mt-1">Nature</p>
+          </div>
+        </div>
+
+        <!-- More Architecture -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="architecture"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/62a78a33-9728-4111-be0f-e8a0e2e0b305.png"
+            alt="Minimalist modern house with clean lines and large floor-to-ceiling windows"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Modern Home</h3>
+            <p class="text-sm text-gray-600 mt-1">Architecture</p>
+          </div>
+        </div>
+
+        <!-- More Travel -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="travel"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a68a768-8a6d-4766-ae0d-31f5d9ed0cb0.png"
+            alt="Ancient temple ruins surrounded by jungle vegetation in golden sunlight"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Lost Temple</h3>
+            <p class="text-sm text-gray-600 mt-1">Travel</p>
+          </div>
+        </div>
+
+        <!-- More Abstract -->
+        <div
+          class="gallery-item rounded-lg overflow-hidden bg-white shadow-md cursor-pointer"
+          data-category="abstract"
+        >
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b9aec594-85e5-485b-8385-6910da7f6162.png"
+            alt="Liquid metal surface with mercury-like droplets creating surreal forms"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="font-semibold text-gray-800">Metallic Dreams</h3>
+            <p class="text-sm text-gray-600 mt-1">Abstract</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-50 flex items-center justify-center lightbox opacity-0 pointer-events-none"
+    >
+      <div class="absolute inset-0 bg-black" onclick="closeLightbox()"></div>
+
+      <div
+        class="relative z-10 lightbox-content bg-white rounded-lg overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col"
+      >
+        <div
+          class="flex justify-between items-center bg-gray-800 text-white p-4"
+        >
+          <h2 id="lightbox-title" class="text-xl font-semibold"></h2>
+          <button
+            onclick="closeLightbox()"
+            class="text-white hover:text-gray-300 text-2xl"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div class="flex-grow flex items-center justify-center p-4 bg-black">
+          <img
+            id="lightbox-image"
+            class="max-w-full max-h-[70vh] object-contain"
+            src=""
+            alt=""
+          />
+        </div>
+
+        <div class="flex justify-between items-center bg-gray-100 p-4">
+          <button
+            onclick="navigateLightbox(-1)"
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          >
+            Previous
+          </button>
+          <p id="lightbox-counter" class="text-gray-700"></p>
+          <button
+            onclick="navigateLightbox(1)"
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

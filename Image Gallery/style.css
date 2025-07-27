@@ -1,0 +1,45 @@
+/* Custom CSS for additional effects */
+.gallery-item {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Lightbox styles */
+.lightbox {
+  transition: opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+  animation: lightboxIn 0.3s ease;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Active filter button */
+.filter-btn.active {
+  background-color: #3b82f6;
+  color: white;
+}
